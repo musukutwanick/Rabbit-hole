@@ -4,13 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rabbit Hole PaGomo</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Pagomo Page Responsive Styles */
+    @media (max-width: 1024px) {
+      .pagomo-order-grid {
+        grid-template-columns: 1fr 320px !important;
+        gap: 25px !important;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-section {
+        padding: 40px 0 !important;
+      }
+      
+      .menu-section h2 {
+        font-size: 2rem !important;
+      }
+      
+      .pagomo-order-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+      }
+      
+      .pagomo-menu-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px !important;
+      }
+      
+      .pagomo-menu-item img {
+        width: 100% !important;
+        max-width: 200px !important;
+        height: 150px !important;
+      }
+      
+      .pagomo-menu-item .add-to-cart-btn {
+        width: 100% !important;
+        max-width: 200px !important;
+        padding: 12px 16px !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .menu-section {
+        padding: 30px 0 !important;
+      }
+      
+      .menu-section > div {
+        padding: 0 15px !important;
+      }
+      
+      .menu-section h2 {
+        font-size: 1.8rem !important;
+      }
+      
+      .menu-section > div > div > div {
+        padding: 20px 15px !important;
+      }
+      
+      .pagomo-menu-item {
+        padding: 15px 0 !important;
+      }
+      
+      .menu-section input,
+      .menu-section textarea {
+        font-size: 16px !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">The White Meat Company</div>
+    <div class="logo">
+      <img src="images/logo.svg" alt="The White Meat Company Logo" />
+    </div>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="masterclass.html">Masterclass Training</a></li>
@@ -21,7 +93,7 @@
   </nav>
 
   <!-- Hero/Intro Section -->
-  <section class="pagomo-hero" style="background: url('images/menu1.jpeg') center/cover no-repeat; min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
+  <section class="pagomo-hero" style="background: url('images/restraurant1.jpg') center/cover no-repeat; min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
     <div class="pagomo-hero-overlay" style="background: linear-gradient(135deg, rgba(34, 139, 34, 0.7), rgba(72, 61, 139, 0.6)); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
     <div style="position: relative; z-index: 2; text-align: center; padding: 60px 20px;">
       <h1 style="color: #fff; font-size: 3.2rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Rabbit Hole Pagomo</h1>
@@ -34,48 +106,48 @@
     <div style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
       <!-- Header -->
       <div style="text-align: center; margin-bottom: 40px;">
-        <h2 style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 10px;">Order Online</h2>
+        <h2 style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 10px;">Place Order</h2>
         <div style="width: 60px; height: 4px; background: #5cb3a8; margin: 0 auto; border-radius: 2px;"></div>
       </div>
       
       <!-- Main Content -->
-      <div style="display: grid; grid-template-columns: 1fr 350px; gap: 30px; align-items: start;">
+      <div class="pagomo-order-grid" style="display: grid; grid-template-columns: 1fr 350px; gap: 30px; align-items: start;">
         <!-- Left Column - Menu Items -->
         <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
           <h3 style="color: #5cb3a8; font-size: 1.3rem; font-weight: 600; margin-bottom: 25px; border-bottom: 2px solid #5cb3a8; padding-bottom: 10px;">Select Your Items</h3>
           
           <div id="pagomo-menu-items">
             <!-- Full Rabbit -->
-            <div class="menu-item" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid #eee;">
-              <img src="full-rabbit.jpg" alt="Full Rabbit" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
-              <div style="flex: 1;">
+            <div class="menu-item pagomo-menu-item" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid #eee;">
+              <img src="full-rabbit.jpg" alt="Full Rabbit" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+              <div style="flex: 1; min-width: 0;">
                 <h4 style="font-size: 1.1rem; font-weight: 600; color: #2c3e50; margin: 0 0 8px 0;">Full Rabbit</h4>
                 <p style="color: #666; font-size: 0.9rem; margin: 0 0 10px 0;">Our signature dish featuring a whole rabbit prepared to perfection with special herbs and spices.</p>
                 <span style="color: #5cb3a8; font-weight: 700; font-size: 1.1rem;">$12.00</span>
               </div>
-              <button class="add-to-cart-btn" data-name="Full Rabbit" data-price="12.00" style="background: #5cb3a8; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600;">Add to Cart</button>
+              <button class="add-to-cart-btn" data-name="Full Rabbit" data-price="12.00" style="background: #5cb3a8; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; flex-shrink: 0;">Add to Cart</button>
             </div>
             
             <!-- Half Rabbit -->
-            <div class="menu-item" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid #eee;">
-              <img src="half-rabbit.jpg" alt="Half Rabbit" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
-              <div style="flex: 1;">
+            <div class="menu-item pagomo-menu-item" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid #eee;">
+              <img src="half-rabbit.jpg" alt="Half Rabbit" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+              <div style="flex: 1; min-width: 0;">
                 <h4 style="font-size: 1.1rem; font-weight: 600; color: #2c3e50; margin: 0 0 8px 0;">Half Rabbit</h4>
                 <p style="color: #666; font-size: 0.9rem; margin: 0 0 10px 0;">Half portion of our delicious rabbit, perfect for lighter appetites.</p>
                 <span style="color: #5cb3a8; font-weight: 700; font-size: 1.1rem;">$6.00</span>
               </div>
-              <button class="add-to-cart-btn" data-name="Half Rabbit" data-price="6.00" style="background: #5cb3a8; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600;">Add to Cart</button>
+              <button class="add-to-cart-btn" data-name="Half Rabbit" data-price="6.00" style="background: #5cb3a8; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; flex-shrink: 0;">Add to Cart</button>
             </div>
             
             <!-- Tsuro -->
-            <div class="menu-item" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid #eee;">
-              <img src="tsuro.jpg" alt="Tsuro" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
-              <div style="flex: 1;">
+            <div class="menu-item pagomo-menu-item" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid #eee;">
+              <img src="tsuro.jpg" alt="Tsuro" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+              <div style="flex: 1; min-width: 0;">
                 <h4 style="font-size: 1.1rem; font-weight: 600; color: #2c3e50; margin: 0 0 8px 0;">Tsuro</h4>
                 <p style="color: #666; font-size: 0.9rem; margin: 0 0 10px 0;">Traditional rabbit stew served with sadza and fresh vegetables.</p>
                 <span style="color: #5cb3a8; font-weight: 700; font-size: 1.1rem;">$6.00</span>
               </div>
-              <button class="add-to-cart-btn" data-name="Tsuro" data-price="6.00" style="background: #5cb3a8; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600;">Add to Cart</button>
+              <button class="add-to-cart-btn" data-name="Tsuro" data-price="6.00" style="background: #5cb3a8; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; flex-shrink: 0;">Add to Cart</button>
             </div>
           </div>
         </div>
@@ -119,15 +191,40 @@
         <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
           <h3 style="color: #5cb3a8; font-size: 1.8rem; font-weight: 600; margin-bottom: 25px;">Rabbit Hole PaGomo</h3>
           <div style="space-y: 15px;">
-            <p style="margin-bottom: 15px; font-size: 1rem; line-height: 1.6;"><strong style="color: #2c3e50;">📍 Address:</strong> 123 Main Street, PaGomo District, Harare, Zimbabwe</p>
-            <p style="margin-bottom: 15px; font-size: 1rem; line-height: 1.6;"><strong style="color: #2c3e50;">📞 Contact Number:</strong> +263 77 123 4567</p>
-            <p style="margin-bottom: 15px; font-size: 1rem; line-height: 1.6;"><strong style="color: #2c3e50;">📧 Email:</strong> pagomo@rabbitholerestaurant.com</p>
+            <p style="margin-bottom: 15px; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 10px;">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" style="flex-shrink: 0;">
+                <rect width="18" height="18" rx="4" fill="#2d6a4f"/>
+                <path d="M9 4.5a3 3 0 0 0-3 3c0 1.875 3 5.25 3 5.25s3-3.375 3-5.25a3 3 0 0 0-3-3zm0 4.125a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25z" fill="#fff"/>
+              </svg>
+              <strong style="color: #2c3e50;">Address:</strong> PaGomo, Harare, Zimbabwe
+            </p>
+            <p style="margin-bottom: 15px; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 10px;">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" style="flex-shrink: 0;">
+                <rect width="18" height="18" rx="4" fill="#2d6a4f"/>
+                <path d="M13 11.375v1.5a.75.75 0 0 1-.82.75A9.79 9.79 0 0 1 4.125 5.57a.75.75 0 0 1 .75-.82h1.5a.75.75 0 0 1 .75.57l.375 1.5a.75.75 0 0 1-.173.75L6.75 8.25a7.875 7.875 0 0 0 3 3l.68-.577a.75.75 0 0 1 .75-.173l1.5.375a.75.75 0 0 1 .57.75z" fill="#fff"/>
+              </svg>
+              <strong style="color: #2c3e50;">Contact Number:</strong> +263 773 333 369
+            </p>
+            <p style="margin-bottom: 15px; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 10px;">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" style="flex-shrink: 0;">
+                <rect width="18" height="18" rx="4" fill="#2d6a4f"/>
+                <path d="M4.5 5.625l3.75 3 3.75-3" stroke="#fff" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="4.5" y="5.625" width="7.5" height="5.25" rx="1.5" stroke="#fff" stroke-width="1.125"/>
+              </svg>
+              <strong style="color: #2c3e50;">Email:</strong> pagomo@rabbitholerestaurant.com
+            </p>
             <div style="margin-top: 20px;">
-              <p style="margin-bottom: 10px; font-size: 1rem; line-height: 1.6;"><strong style="color: #2c3e50;">🕒 Opening Hours:</strong></p>
+              <p style="margin-bottom: 10px; font-size: 1rem; line-height: 1.6; display: flex; align-items: center; gap: 10px;">
+                <svg width="18" height="18" fill="none" viewBox="0 0 18 18" style="flex-shrink: 0;">
+                  <rect width="18" height="18" rx="4" fill="#2d6a4f"/>
+                  <circle cx="9" cy="9" r="3.75" stroke="#fff" stroke-width="1.125"/>
+                  <path d="M9 6.375v2.25l1.5 1.5" stroke="#fff" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <strong style="color: #2c3e50;">Opening Hours:</strong>
+              </p>
               <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-left: 20px;">
-                <p style="margin-bottom: 5px;"><strong>Tuesday - Friday:</strong> 9:30 AM – 10:30 PM</p>
-                <p style="margin-bottom: 5px;"><strong>Sunday:</strong> 9:30 AM – 6:00 PM</p>
-                <p style="margin: 0;"><strong>Monday & Saturday:</strong> Closed</p>
+                <p style="margin-bottom: 5px;"><strong>Tuesday - Sunday:</strong> 9:30 AM – 10:00 PM</p>
+                <p style="margin: 0;"><strong>Monday</strong> Closed</p>
               </div>
             </div>
           </div>
